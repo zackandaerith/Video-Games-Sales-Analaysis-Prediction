@@ -28,7 +28,9 @@ libraryDependencies ++= Seq(
 val sparkVersion = "3.1.1"
 
 libraryDependencies ++= Seq(
+  // https://mvnrepository.com/artifact/org.apache.spark/spark-core
   "org.apache.spark" % "spark-core_2.12" % sparkVersion,
+  // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
   "org.apache.spark" % "spark-sql_2.12" % sparkVersion
 )
 
