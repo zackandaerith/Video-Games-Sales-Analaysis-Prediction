@@ -28,9 +28,7 @@ libraryDependencies ++= Seq(
 val sparkVersion = "3.1.1"
 
 libraryDependencies ++= Seq(
-  // https://mvnrepository.com/artifact/org.apache.spark/spark-core
   "org.apache.spark" % "spark-core_2.12" % sparkVersion,
-  // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
   "org.apache.spark" % "spark-sql_2.12" % sparkVersion
 )
 
@@ -39,8 +37,23 @@ libraryDependencies +=
   "org.apache.spark" %% "spark-mllib" % "3.1.1" % "provided"
 
 
-
-
+lazy val root = (project in file("."))
+  .enablePlugins(PlayScala)
+  .settings(
+    name := """play-scala-hello-world-tutorial""",
+    organization := "com.example",
+    version := "1.0-SNAPSHOT",
+    scalaVersion := "2.13.4",
+    libraryDependencies ++= Seq(
+      guice,
+      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
+    ),
+    scalacOptions ++= Seq(
+      "-feature",
+      "-deprecation",
+      "-Xfatal-warnings"
+    )
+  )
 
 
 
